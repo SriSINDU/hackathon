@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add-contact</title>
+	<script type="text/javascript">
+		var text,obj;
+
+		function checkFeilds(){
+			var flag=1;
+			Name=document.getElementById('name').value;
+			Email=document.getElementById('email').value;
+			Phone=document.getElementById('phone').value;
+			Loc=document.getElementById('loc').value;
+			if(Name==""){
+				alert("please enter the Name feild");
+				return false;
+			}
+			if(! (/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(Email))){
+				alert("please enter a valid email");
+				flag=0;
+				return false;
+			}
+			if(! (Phone.match(/^\d{10}$/))){
+				alert("please enter only digits for phone number");
+				flag=0;
+				return false;
+			}
+			if(Loc==""){
+				alert("please enter location feild.");
+				flag=0;
+				return false;
+			}
+			if(flag==1){
+
+					
+			}
+	</script>
+</head>
+<body>
+	<form method="post" align="center">
+		Name &nbsp; &nbsp;<input type="text" id="name" placeholder="Enter your name here"><br><br>
+		Email &nbsp; &nbsp;<input type="text" id="email" placeholder="Enter your email here"><br><br>
+		Phone &nbsp; &nbsp;<input type="text" id="phone" placeholder="Enter your number here"><br><br>
+		Location &nbsp; &nbsp;<input type="text" id="loc" placeholder="Enter your location here"><br><br>
+		<input type="submit" value="submit" align="center" onclick=" return checkFeilds()">
+	</form>
+
+</body>
+</html>

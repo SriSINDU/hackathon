@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>display</title>
+	<style type="text/css">
+		table{
+				width:80%;
+				padding-top:100px;	
+		}
+	</style>
+</head>
+<body>
+	<table id="display" align="center">
+	</table>
+	<script type="text/javascript">
+		var text,obj;
+		text = localStorage.getItem("testJSON");
+		obj = JSON.parse(text);
+		//console.log(obj);
+		//console.log(typeof(obj.name));
+		var s=" ";
+
+		s=s+"<tr><td>name</td><td>email</td><td>phone</td><td>city</td><tr>";
+		s=s+"<tr><td>"+obj.namee+"</td><td>"+obj.emaill+"</td><td>"+obj.phonee+"</td><td>"+obj.cityy+"</td><tr>";
+		console.log(s);
+		document.getElementById("display").innerHTML=s;
+		
+	</script>
+</body>
+</html>

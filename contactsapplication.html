@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aws-contacts</title>
+	<style type="text/css">
+		#addcontact{
+			height:200px;
+			width:500px;
+			float:left;
+		}
+		#cdisplay{
+			margin-left: 200px;
+			margin-top:10px;
+		}
+		#suggestions{
+			padding-top: 200px;
+		}
+		#suggestbox{
+			width:25%;
+		}
+	</style>
+	<script type="text/javascript" src="contactscrud.js"></script>
+</head>
+<body >
+	<div id="addcontact" align="center">
+		<h3 id="displayhead">Fill the details</h3>
+		<form  method="post">
+			<table > 
+				<tr><td>Name</td><td><input type="text" id="name"  onblur="checkName()" onfocus="checkname()" ></td><td><span id="sname">enter name</span></td></tr>
+				<tr><td>Email</td><td><input type="text" id="email" onblur="checkEmail()" onfocus="checkemail()"></td><td><span id="semail">enter email</span></td></tr>
+				<tr><td>Phone</td><td><input type="text" id="phone" onblur="checkPhone()" onfocus="checkphone()"></td><td><span id="sphone">enter phone</span></td></tr>
+				<tr><td>Location</td><td><input type="text" id="loc" onblur="checkLoc()" onfocus="checkloc()"></td><td><span id="sloc">enter location</span></td></tr>
+				<tr><td></td><td><input type="submit" id="disbutton" value="Add" align="center" onclick=" return checkFeilds()"></td></tr>
+			</table>
+		</form>
+	</div>
+	<div id="suggestions" align="center">
+		<input type="text" id="suggestbox" placeholder="enter a name to display contact suggestions" onkeyup ="suggestcontacts()" onkeypress="gotoContact(event)">
+		<p id="displaysuggestions">
+		</p>
+	</div>
+	<div id="cdisplay" align="center">
+		<table id="display"></table>
+	</div>
+</body>
+</html>

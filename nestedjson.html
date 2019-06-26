@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>nestedjson</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var jobj={
+					"contacts":[{"name":"sindhu","email":"srisindu.3@gmail.com","phone":"67586749584","loc":"visakhapatnam"},
+								{"name":"shakti","email":"shaktikumar.3@gmail.com","phone":"656829473","loc":"noida"},
+								{"name":"mohanteja","email":"mohanteja.3@gmail.com","phone":"4625643823","loc":"visakhapatnam"}
+								]
+		}
+		var i;
+		for (i in jobj.contacts){
+			console.log(jobj.contacts[i].name);
+			console.log(jobj.contacts[i].email);
+			console.log(jobj.contacts[i].phone);
+			console.log(jobj.contacts[i].loc);
+		}
+		var len=jobj.contacts.length;
+		console.log(len);
+
+		jobj.contacts[len]={};
+		jobj.contacts[len].name="Amandeep";
+		jobj.contacts[len].email="amandeep@gmail.com";
+		jobj.contacts[len].phone="645275347658";
+		jobj.contacts[len].loc="indore";
+
+		for (i in jobj.contacts){
+			console.log(jobj.contacts[i].name);
+			console.log(jobj.contacts[i].email);
+			console.log(jobj.contacts[i].phone);
+			console.log(jobj.contacts[i].loc);
+
+		}  
+		var j=JSON.stringify(jobj);
+		console.log(j);
+		console.log(jobj);
+		myJSON = JSON.stringify(jobj);
+		localStorage.setItem("contactjson", myJSON);
+		var text = localStorage.getItem("contactjson");
+		var obj = JSON.parse(text);
+		console.log(obj);
+	</script>
+</body>
+</html>
